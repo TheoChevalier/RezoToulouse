@@ -106,9 +106,9 @@ function showmap() {
     "moveend": onMapMove
   });
 
-  var tours = new OpenLayers.LonLat(0.683, 47.383)
+  var cityPosition = new OpenLayers.LonLat(1.444, 43.604)
       .transform(map.options.displayProjection, map.options.projection);
-  map.setCenter(tours, 11, false, true);
+  map.setCenter(cityPosition, 11, false, true);
   toursExtent = map.getExtent().transform(map.options.projection, map.options.displayProjection);
 }
 

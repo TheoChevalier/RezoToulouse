@@ -1,5 +1,5 @@
 VERSION ?= $(shell grep "version" manifest.webapp |cut -d':' -f2 |cut -d'"' -f2)
-TEMPDIR ?= ../tempdir/
+TEMPDIR ?= ../tempdir
 WEBAPP ?= filatours-$(VERSION).zip
 
 $(info Producing $(WEBAPP))
@@ -15,7 +15,7 @@ $(TEMPDIR):
 
 webapp: $(TEMPDIR)
 	cp -a * $(TEMPDIR)
-	rm $(TEMPDIR)/shared
+	rm -rf $(TEMPDIR)/shared
 	mkdir -p $(TEMPDIR)/shared
 	cp -a shared/style $(TEMPDIR)/shared/
 	cp -a shared/style_unstable $(TEMPDIR)/shared/
